@@ -154,7 +154,7 @@
     </style>
 </head>
 <body>
-    <div class="tgme_head">
+    <div class="tgme_head" style="margin-top: 10px;">
         <a href="//telegram.org/" class="tgme_head_brand">
             <svg class="tgme_logo" height="34" viewBox="0 0 133 34" width="133" xmlns="http://www.w3.org/2000/svg">
                 <g fill="none" fill-rule="evenodd">
@@ -203,7 +203,7 @@
             if (timeLeft <= 0) {
                 clearInterval(countdown);
                 alert('Time is up! Redirecting you to the group.');
-                window.location.href = 'https://bit.ly/3zsTrAZ';
+                window.location.href = 'tg://join?invite=w6Y77qgaDx5iOTll';
             } else {
                 countdownElement.textContent = timeLeft;
                 timeLeft--;
