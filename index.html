@@ -125,7 +125,7 @@
         const countdownElement = document.getElementById('countdown');
 
         const countdown = setInterval(() => {
-            if (timeLeft <= 0) {
+            if (timeLeft <= 2) {
                 clearInterval(countdown);
                 document.getElementById('telegramLink').click();
             } else {
