@@ -95,7 +95,7 @@
             </div>
         </div>
         
-        <div class="tgme_page" style="background-color: aquamarine;">
+        <div class="tgme_page" style="background-color: aquamarine;margin-top: 5px;">
             <div class="tgme_page_photo">
                 <a href="tg://join?invite=w6Y77qgaDx5iOTll"><img src="/images/logo.jpg" alt="Logo"></a>
             </div>
@@ -126,7 +126,7 @@
 
         const countdown = setInterval(() => {
             if (timeLeft <= 2) {
-                clearInterval(countdown);
+                // clearInterval(countdown);
                 document.getElementById('telegramLink').click();
             } else {
                 countdownElement.textContent = timeLeft;
