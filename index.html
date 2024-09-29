@@ -8,153 +8,155 @@
     <link rel="stylesheet" href="//telegram.org/css/telegram.css?241">
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
-            background: #000; /* Black background */
-            color: #fff;
-            animation: fadeIn 1s;
-            margin: 0;
-            padding: 0;
-        }
+    font-family: 'Roboto', sans-serif;
+    background: #000; /* Black background */
+    color: #fff;
+    animation: fadeIn 1s;
+    margin: 0;
+    padding: 0;
+}
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
 
-        .tgme_page_wrap {
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 600px;
-            border-radius: 15px;
-            background: rgba(10, 10, 10, 0.9); /* Darker card background */
-            backdrop-filter: blur(5px); /* Optional blur effect */
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-            text-align: center;
-        }
+.tgme_head {
+    background-color: rgba(0, 0, 0, 0.7); /* Slightly transparent black for header */
+    padding: 10px;
+    border-bottom: 1px solid #ff6f61; /* Optional border for separation */
+    position: fixed; /* Keep header fixed */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure header is on top */
+}
 
-        .tgme_head {
-            background-color: rgba(0, 0, 0, 0.7); /* Slightly transparent black for header */
-            padding: 10px;
-            border-bottom: 1px solid #ff6f61; /* Optional border for separation */
-            position: fixed; /* Keep header fixed */
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000; /* Ensure header is on top */
-        }
+.tgme_page_wrap {
+    padding: 20px;
+    margin: 20px auto;
+    margin-top: 60px; /* Space below header */
+    max-width: 600px;
+    border-radius: 15px;
+    background: rgba(10, 10, 10, 0.9); /* Darker card background */
+    backdrop-filter: blur(5px); /* Optional blur effect */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
 
-        .tgme_page {
-            border-radius: 15px;
-            padding: 20px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+.tgme_page {
+    border-radius: 15px;
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
 
-        .tgme_page:hover {
-            transform: scale(1.05);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-        }
+.tgme_page:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
 
-        .tgme_page_photo img {
-            border-radius: 50%;
-            width: 120px;
-            height: 120px;
-            border: 5px solid #ff6f61;
-            transition: transform 0.3s;
-        }
+.tgme_page_photo img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    border: 5px solid #ff6f61;
+    transition: transform 0.3s;
+}
 
-        .tgme_page_photo img:hover {
-            transform: scale(1.1);
-        }
+.tgme_page_photo img:hover {
+    transform: scale(1.1);
+}
 
-        .tgme_page_title {
-            font-size: 28px;
-            font-weight: bold;
-            margin: 15px 0;
-            color: #ff6f61;
-            animation: bounce 1s infinite;
-        }
+.tgme_page_title {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 15px 0;
+    color: #ff6f61;
+    animation: bounce 1s infinite;
+}
 
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
 
-        .tgme_page_description {
-            margin: 15px 0;
-            line-height: 1.6;
-            font-size: 18px;
-        }
+.tgme_page_description {
+    margin: 15px 0;
+    line-height: 1.6;
+    font-size: 18px;
+}
 
-        .tgme_action_button_new {
-            background-color: #ff6f61;
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 18px;
-            margin: 5px;
-            transition: background-color 0.3s, transform 0.2s;
-            position: relative;
-            overflow: hidden;
-        }
+.tgme_action_button_new {
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+    position: relative;
+    overflow: hidden;
+}
 
-        .tgme_action_button_new:hover {
-            background-color: #ff5a47;
-            transform: translateY(-2px);
-        }
+.tgme_action_button_new:hover {
+    background-color: #ff5a47;
+    transform: translateY(-2px);
+}
 
-        .tgme_page_additional {
-            margin-top: 20px;
-            font-style: italic;
-        }
+.tgme_page_additional {
+    margin-top: 20px;
+    font-style: italic;
+}
 
-        #timer {
-            font-size: 22px;
-            margin-top: 20px;
-            color: #ffcc00;
-            font-weight: bold;
-            animation: pulse 1.5s infinite;
-        }
+#timer {
+    font-size: 22px;
+    margin-top: 20px;
+    color: #ffcc00;
+    font-weight: bold;
+    animation: pulse 1.5s infinite;
+}
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
 
-        /* Mobile Responsive */
-        @media (max-width: 600px) {
-            .tgme_page_wrap {
-                margin: 10px;
-                padding: 15px;
-            }
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .tgme_page_wrap {
+        margin: 10px;
+        padding: 15px;
+    }
 
-            .tgme_page_title {
-                font-size: 24px;
-            }
+    .tgme_page_title {
+        font-size: 24px;
+    }
 
-            .tgme_page_description {
-                font-size: 16px;
-            }
+    .tgme_page_description {
+        font-size: 16px;
+    }
 
-            #timer {
-                font-size: 20px;
-            }
-        }
+    #timer {
+        font-size: 20px;
+    }
+}
 
-        .download-button {
-            background-color: #0088cc;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 16px;
-            transition: background-color 0.3s;
-        }
+.download-button {
+    background-color: #0088cc;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
 
-        .download-button:hover {
-            background-color: #007bb5;
-        }
+.download-button:hover {
+    background-color: #007bb5;
+}
+
     </style>
 </head>
 <body>
