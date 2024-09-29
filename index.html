@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Our Telegram Channel!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background: url('https://wallpaperaccess.com/full/3167993.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        .about {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header class="d-flex justify-content-between align-items-center p-3">
+        <a href="https://telegram.org" target="_blank" class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Telegram_logo.svg" alt="Telegram Logo" height="40">
+        </a>
+        <a href="#" class="btn btn-success">Download Guide</a>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <h1>Join Our Telegram Channel!</h1>
+            <p>Stay connected with exclusive updates, insights, and engaging discussions.</p>
+            <a href="https://t.me/YourChannelLink" class="btn btn-warning">Join Now</a>
+            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#infoModal">
+                Learn More
+            </button>
+        </section>
+
+        <section class="about">
+            <h2>What We Offer</h2>
+            <p>Our Telegram channel provides the latest news, community support, and exclusive content tailored just for you. Here’s why you should join us:</p>
+        </section>
+
+        <section class="features text-center p-4">
+            <h2>Why Join Us?</h2>
+            <div class="row">
+                <div class="col-md-4" onclick="showModal('Latest Updates', 'Instant notifications on news and events.')" style="cursor: pointer;">
+                    <i class="fas fa-bullhorn fa-2x"></i>
+                    <h3>Latest Updates</h3>
+                </div>
+                <div class="col-md-4" onclick="showModal('Community Engagement', 'Interact with like-minded individuals.')" style="cursor: pointer;">
+                    <i class="fas fa-users fa-2x"></i>
+                    <h3>Community Engagement</h3>
+                </div>
+                <div class="col-md-4" onclick="showModal('Exclusive Content', 'Access unique resources and special offers.')" style="cursor: pointer;">
+                    <i class="fas fa-gift fa-2x"></i>
+                    <h3>Exclusive Content</h3>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.7);">
+        <p>&copy; 2024 Your Channel Name. All rights reserved.</p>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="infoModalLabel">Learn More</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Join our Telegram channel to stay updated with the latest news, participate in discussions, and connect with other members.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function showModal(title, description) {
+            document.getElementById("modal-title").innerText = title;
+            document.getElementById("modal-description").innerText = description;
+            document.getElementById("modal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+
+        // Close modal when clicking outside of the modal content
+        window.onclick = function(event) {
+            const modal = document.getElementById("modal");
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
