@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="//telegram.org/css/bootstrap.min.css?3">
     <link rel="stylesheet" href="//telegram.org/css/telegram.css?241">
     <style>
-        body {
+body {
     font-family: 'Roboto', sans-serif;
     background: #000; /* Black background */
     color: #fff;
@@ -25,7 +25,7 @@
     background-color: rgba(0, 0, 0, 0.7); /* Slightly transparent black for header */
     padding: 10px;
     border-bottom: 1px solid #ff6f61; /* Optional border for separation */
-    position: fixed; /* Keep header fixed */
+    position: relative; /* Keep header fixed */
     width: 100%;
     top: 0;
     left: 0;
@@ -35,7 +35,7 @@
 .tgme_page_wrap {
     padding: 20px;
     margin: 20px auto;
-    margin-top: 60px; /* Space below header */
+    margin-top: 70px; /* Space below header */
     max-width: 600px;
     border-radius: 15px;
     background: rgba(10, 10, 10, 0.9); /* Darker card background */
@@ -87,22 +87,29 @@
 }
 
 .tgme_action_button_new {
-    background-color: #ff6f61;
+    background: linear-gradient(90deg, #0088cc, #00aaff);
     color: white;
-    border: none;
+    border: none; /* Remove default border */
     padding: 12px 20px;
-    border-radius: 5px;
+    border-radius: 30px; /* Rounded corners */
     text-decoration: none;
     font-size: 18px;
     margin: 5px;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: background 0.3s, transform 0.2s;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 136, 204, 0.4); /* Add shadow */
 }
 
 .tgme_action_button_new:hover {
-    background-color: #ff5a47;
+    background: linear-gradient(90deg, #00aaff, #0088cc);
     transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 136, 204, 0.6); /* Enhance shadow on hover */
+}
+
+.tgme_action_button_new:active {
+    transform: translateY(1px); /* Press effect */
+    box-shadow: 0 4px 15px rgba(0, 136, 204, 0.4); /* Reset shadow */
 }
 
 .tgme_page_additional {
@@ -194,6 +201,7 @@
             <div class="tgme_page_action">
                 <button class="tgme_action_button_new" id="joinButton" onclick="joinChannel()">Join Now</button>
             </div>
+            
             <div class="tgme_page_additional">
                 You are invited to the channel <strong>Dipendra Kumar ™ 🧿</strong>. Click above to join.
             </div>
