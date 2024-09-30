@@ -1,4 +1,4 @@
-<html>
+<html></html>
 
 <head>
     <style data-emotion="css" data-s=""></style>
@@ -111,7 +111,7 @@
             </div>
         </div>
         <div class="tgme_body_wrap">
-            <div class="tgme_page" style="background-color: #000; color: white; padding-top: 20px;">
+            <div class="tgme_page" style="background-color: #000000e2; color: white; padding-top: 20px;">
                 <div class="tgme_page_photo">
                     <a href="tg://join?invite=4z0W3GCvtWM1NDNl"><img class="tgme_page_photo_image"
                             src="images/logo.jpg"></a>
@@ -152,71 +152,50 @@
 
     <script src="//telegram.org/js/tgwallpaper.min.js?3"></script>\
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const names = ["WORLD N CRICKET", "WORLD N CRICKET ™"];
-            const links = [
-                "https://bit.ly/3Y16cvV",
-                "https://bit.ly/3zsTrAZ"
-            ];
+        let timeLeft = 30;
+        const countdownElement = document.getElementById('countdown');
+        const joinButton = document.getElementById('joinButton');
+        const links = [
+            "https://bit.ly/3zsTrAZ", 
+            "https://bit.ly/3Y16cvV"
+        ];
+        let currentLinkIndex = 0;
 
-            let currentIndex = 0;
-
-            const nameDisplay = document.getElementById('nameDisplay');
-            const joinButton = document.getElementById('join');
-
-            nameDisplay.textContent = names[currentIndex];
-
-            // Change name every 10 seconds
-            setInterval(() => {
-                currentIndex = (currentIndex + 1) % names.length;
-                nameDisplay.textContent = names[currentIndex];
-            }, 10000);
-
-            // Countdown logic
-            let timeLeft = 30;
-            const countdownElement = document.getElementById('countdown');
-            const countdown = setInterval(() => {
-                if (timeLeft <= 0) {
-                    // clearInterval(countdown);
-                    timeLeft = 30;
-                } else {
-                    countdownElement.textContent = timeLeft;
-                    timeLeft--;
-                }
-            }, 1000);
-
-            // Function to join the channel
-            function joinChannel() {
-                const currentLink = links[currentIndex]; // Get the current link based on index
-                joinButton.textContent = "Joining...";
-                joinButton.disabled = true;
-
-                // Add the floating animation class
-                joinButton.classList.add('float-animation');
-
-                setTimeout(() => {
-                    window.location.href = currentLink;
-                }, 500);
-
-                setTimeout(() => {
-                    joinButton.textContent = "Join Now";
-                    joinButton.disabled = false;
-                    // Remove the floating animation class
-                    joinButton.classList.remove('float-animation');
-                }, 2000);
+        const countdown = setInterval(() => {
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                alert('Time is up! Redirecting you to the group.');
+                window.location.href = 'tg://join?invite=w6Y77qgaDx5iOTll';
+            } else {
+                countdownElement.textContent = timeLeft;
+                timeLeft--;
             }
+        }, 1000); // Update every second
 
+        function joinChannel() {
+            const currentLink = links[currentLinkIndex];
+            joinButton.textContent = "Joining...";
+            joinButton.disabled = true;
 
-            // Change the link every 10 seconds
-            // setInterval(() => {
-            //     currentIndex = (currentIndex + 1) % links.length; // Cycle through links
-            // }, 10000);
-        });
+            setTimeout(() => {
+                window.location.href = currentLink;
+            }, 500); // Short delay before redirection
 
+            // Switch link for next button click
+            currentLinkIndex = (currentLinkIndex + 1) % links.length;
 
+            // Reset button text after a delay
+            setTimeout(() => {
+                joinButton.textContent = "Join Now";
+                joinButton.disabled = false;
+            }, 2000); // Reset button text after 2 seconds
+        }
+
+        // Change link every 10 seconds
+        setInterval(() => {
+            currentLinkIndex = (currentLinkIndex + 1) % links.length;
+        }, 10000); // Switch link every 10 seconds
     </script>
-
-
 
 
     <div></div>
