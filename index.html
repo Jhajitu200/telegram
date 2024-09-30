@@ -92,19 +92,19 @@
 <div id="nameDisplay" dir="auto" style="color: white;"></div>
 
 </div>
-<div class="tgme_page_extra">128234 subscribers</div>
+<div class="tgme_page_extra">128 234 subscribers</div>
 <div id="timer" style="color: #007bb5;">
-    Time remaining: <span id="countdown">30</span> seconds
+    TIME LEFT: <span id="countdown">30</span> SECONDS
 </div>
-<div class="tgme_page_description" dir="auto">Nothing more stronger than 💸<br>Broken man rebuilding himself… <br><br>{ BE AWARE OF FAKE CHANNELS BY MY NAME.. }</div>
+<div class="tgme_page_description" dir="auto">Nothing more stronger than 💸<br>Broken man rebuilding himself… <br>{ BE AWARE OF FAKE CHANNELS BY MY NAME.. }</div>
 <div class="tgme_page_action">
-
+  
 <a class="tgme_action_button_new shine" id="join" href="javascript:void(0);" onclick="joinChannel()">Join Channel</a>
 
 </div>
 <!-- WEBOGRAM_BTN -->
 <div class="tgme_page_additional" style="color: white;">
-You are invited to the channel <strong dir="auto">WORL N CRICKET ™ 🧿</strong>. Click above to join.
+You are invited to the channel <strong dir="auto">WORLD N CRICKET </strong>. Click above to join.
 </div>
         </div>
         
@@ -140,7 +140,8 @@ You are invited to the channel <strong dir="auto">WORL N CRICKET ™ 🧿</stron
     const countdownElement = document.getElementById('countdown');
     const countdown = setInterval(() => {
         if (timeLeft <= 0) {
-            clearInterval(countdown);
+            // clearInterval(countdown);
+            timeLeft=30;
         } else {
             countdownElement.textContent = timeLeft;
             timeLeft--;
