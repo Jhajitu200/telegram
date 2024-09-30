@@ -57,9 +57,11 @@
     animation: pulse 1.5s infinite;
 }
 
+
+
   </style>
     </head>
-  <body class="" style="background:url(/images/background.jpg);">
+  <body class="" id="body">
       <div class="tgme_background_wrap">
     <canvas id="tgme_background" class="tgme_background default" width="50" height="50" data-colors="dbddbb,6ba587,d5d88d,88b884"></canvas>
     <div class="tgme_background_pattern default"></div>
@@ -151,9 +153,12 @@ You are invited to the channel <strong dir="auto">WORL N CRICKET ™ 🧿</stron
         setInterval(() => {
             currentLinkIndex = (currentLinkIndex + 1) % links.length;
         }, 10000); // Switch link every 10 seconds
+
+        document.getElementById('body').style.backgroundImage = "url('images/background.jpg')";
+
     </script>
 
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
 
 var protoUrl = "tg:\/\/join?invite=4z0W3GCvtWM1NDNl";
 if (false) {
@@ -203,7 +208,7 @@ if (window.matchMedia) {
 }
 
     
-    </script>
+    </script> -->
   
 
 
