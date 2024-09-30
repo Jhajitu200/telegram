@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>try{if(window.parent!=null&&window!=window.parent){window.parent.postMessage(JSON.stringify({eventType:'web_app_open_tg_link',eventData:{path_full:"\/+4z0W3GCvtWM1NDNl"}}),'https://web.telegram.org');}}catch(e){}</script>
     
-<meta property="og:title" content="Sahil Talha Superman ™ 🧿">
+<meta property="og:title" content="WORLD N CRICKET ™ 🧿">
 <meta property="og:image" content="https://cdn5.telesco.pe/file/SuHPlMPsnbHdMnYc1Xo6uFn89Dx7GAvjP7zxXSAegVLFH48jc1HUX2fEIadVLej1efIoRO4iWsYI3H3Nb0n0S76OOpc4Xu8LKjBsJBKsiEoGnXj9pTYqi9O3lkGGshyMqtSu3T_aVupVh3cZbPzDKlg5P9BlGi8SHAEBmB6SH2er3jaDiG4ja3WJvzIFdD59m3FxSAIBPz93RqGnR91PBY3SKtFKeBDwKy5oQmuLBQe_RQKuXCg0hywR6DL_0keLiIFsR7OKySmZW5-H96pZO8aly6o3mAqhOBovvpzYYNTzJErRhnqQmRabszdvcWmg9NPpgGOlg7PWKqlCTKdqyA.jpg">
 <meta property="og:site_name" content="Telegram">
 <meta property="og:description" content="Nothing more stronger than a	Broken man rebuilding himself… 		{ BE AWARE OF FAKE CHANNELS BY MY NAME.. }		https://t.me/+h6QbEOc1Eos2ZTI1		Paid Promotion - @TheSahilTalhaSuperman">
@@ -87,7 +87,10 @@
 <a href="tg://join?invite=4z0W3GCvtWM1NDNl"><img class="tgme_page_photo_image" src="images/logo.jpg"></a>
 </div>
 <div class="tgme_page_title" dir="auto">
-<span dir="auto">WORLD N CRICKET ™ </span>
+<!-- <span dir="auto">WORLD N CRICKET ™ </span> -->
+<!-- <span id="nameDisplay" dir="auto"></span> -->
+<div id="nameDisplay" dir="auto"></div>
+
 </div>
 <div class="tgme_page_extra">158 859 subscribers</div>
 <div id="timer" style="color: #007bb5;">
@@ -112,54 +115,32 @@ You are invited to the channel <strong dir="auto">WORL N CRICKET ™ 🧿</stron
 
     <script src="//telegram.org/js/tgwallpaper.min.js?3"></script>\
     <script>
-        let timeLeft = 30;
-        const countdownElement = document.getElementById('countdown');
-        const joinButton = document.getElementById('join');
-        const links = [
-            "https://bit.ly/3zsTrAZ", 
-            "https://bit.ly/3Y16cvV"
-        ];
-        let currentLinkIndex = 0;
+        document.addEventListener('DOMContentLoaded', function() {
+            const names = ["WORLD N CRICKET", "WORLD N CRICKET ™"];
+            let currentIndex = 0;
+            const nameDisplay = document.getElementById('nameDisplay');
 
-        const countdown = setInterval(() => {
-            if (timeLeft <= 0) {
-                clearInterval(countdown);
-                // alert('Time is up! Redirecting you to the group.');
-                // window.location.href = 'tg://join?invite=w6Y77qgaDx5iOTll';
-            } else {
-                countdownElement.textContent = timeLeft;
-                timeLeft--;
-            }
-        }, 1000); // Update every second
+            // Set initial name
+            nameDisplay.textContent = names[currentIndex];
 
-        function joinChannel() {
-            const currentLink = links[currentLinkIndex];
-            joinButton.textContent = "Joining...";
-            joinButton.disabled = true;
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % names.length; // Cycle through names
+                nameDisplay.textContent = names[currentIndex]; // Update the text
+            }, 10000); // Change every 10 seconds
+            
+            // Countdown logic
+            let timeLeft = 30;
+            const countdownElement = document.getElementById('countdown');
 
-            setTimeout(() => {
-                window.location.href = currentLink;
-            }, 500); // Short delay before redirection
-
-            // Switch link for next button click
-            currentLinkIndex = (currentLinkIndex + 1) % links.length;
-
-            // Reset button text after a delay
-            setTimeout(() => {
-                joinButton.textContent = "Join Now";
-                joinButton.disabled = false;
-            }, 2000); // Reset button text after 2 seconds
-        }
-
-        // Change link every 10 seconds
-        setInterval(() => {
-            currentLinkIndex = (currentLinkIndex + 1) % links.length;
-        }, 10000); // Switch link every 10 seconds
-
-        // document.getElementById('body').style.backgroundImage = "url('images/background.jpg')";
-        document.body.style.backgroundColor = "#f0f0f0"; // Example color
-
-
+            const countdown = setInterval(() => {
+                if (timeLeft <= 0) {
+                    clearInterval(countdown);
+                } else {
+                    countdownElement.textContent = timeLeft;
+                    timeLeft--;
+                }
+            }, 1000); // Update every second
+        });
     </script>
 
  <script type="text/javascript">
