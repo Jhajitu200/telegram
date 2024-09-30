@@ -115,42 +115,61 @@ You are invited to the channel <strong dir="auto">WORL N CRICKET ™ 🧿</stron
 
     <script src="//telegram.org/js/tgwallpaper.min.js?3"></script>\
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const names = ["WORLD N CRICKET", "WORLD N CRICKET ™"];
-            const links = [
-                "https://bit.ly/3zsTrAZ",
-                "https://bit.ly/3Y16cvV",
-            ];
-            let currentIndex = 0;
-            const nameDisplay = document.getElementById('nameDisplay');
-            const joinButton = document.getElementById('join');
+            document.addEventListener('DOMContentLoaded', function() {
+    const names = ["WORLD N CRICKET", "WORLD N CRICKET ™"];
+    const links = [
+        "https://bit.ly/3zsTrAZ",
+        "https://bit.ly/3Y16cvV",
+    ];
+    let currentIndex = 0;
+    const nameDisplay = document.getElementById('nameDisplay');
+    const joinButton = document.getElementById('join');
 
-            
-            nameDisplay.textContent = names[currentIndex];
-            joinButton.onclick = () => joinChannel();
+    // Set initial name and link
+    nameDisplay.textContent = names[currentIndex];
 
-            setInterval(() => {
-                currentIndex = (currentIndex + 1) % names.length;
-                nameDisplay.textContent = names[currentIndex]; 
-            }, 10000);
+    // Change name and link every 10 seconds
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % names.length;
+        nameDisplay.textContent = names[currentIndex]; 
+    }, 10000);
+
+    // Countdown logic
+    let timeLeft = 30;
+    const countdownElement = document.getElementById('countdown');
+
+    const countdown = setInterval(() => {
+        if (timeLeft <= 0) {
+            clearInterval(countdown);
+        } else {
+            countdownElement.textContent = timeLeft;
+            timeLeft--;
+        }
+    }, 1000); 
+
+    // Function to join channel
+    function joinChannel() {
+        const currentLink = links[currentIndex]; // Use currentIndex for the link
+        joinButton.textContent = "Joining...";
+        joinButton.disabled = true;
+
+        setTimeout(() => {
+            window.location.href = currentLink;
+        }, 500); 
+
+        // Reset button text after a delay
+        setTimeout(() => {
+            joinButton.textContent = "Join Now";
+            joinButton.disabled = false;
+        }, 2000); 
+    }
+
+    // Also cycle through links every 10 seconds to keep them in sync
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % links.length; // Cycle through links
+    }, 10000); 
 
 
-            let timeLeft = 30;
-            const countdownElement = document.getElementById('countdown');
-
-            const countdown = setInterval(() => {
-                if (timeLeft <= 0) {
-                    clearInterval(countdown);
-                } else {
-                    countdownElement.textContent = timeLeft;
-                    timeLeft--;
-                }
-            }, 1000); 
-
-            
-            setInterval(() => {
-                currentIndex = (currentIndex + 1) % links.length; // Cycle through links
-            }, 10000); 
 
 
             function joinChannel() {
