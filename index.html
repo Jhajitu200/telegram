@@ -123,16 +123,17 @@ You are invited to the channel <strong dir="auto">WORL N CRICKET ™ 🧿</stron
     ];
     
     let currentIndex = 0;
+    let currentIndex1 = 0;
     const nameDisplay = document.getElementById('nameDisplay');
     const joinButton = document.getElementById('join');
 
     nameDisplay.textContent = names[currentIndex];
 
     // Change name every 10 seconds
-    // setInterval(() => {
-    //     currentIndex = (currentIndex + 1) % names.length;
-    //     nameDisplay.textContent = names[currentIndex];
-    // }, 10000);
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % names.length;
+        nameDisplay.textContent = names[currentIndex];
+    }, 10000);
 
     // Countdown logic
     let timeLeft = 30;
@@ -148,7 +149,7 @@ You are invited to the channel <strong dir="auto">WORL N CRICKET ™ 🧿</stron
 
     // Function to join the channel
     function joinChannel() {
-        const currentLink = links[currentIndex]; // Get the current link based on index
+        const currentLink = links[currentIndex1]; // Get the current link based on index
         joinButton.textContent = "Joining...";
         joinButton.disabled = true;
 
@@ -166,7 +167,7 @@ You are invited to the channel <strong dir="auto">WORL N CRICKET ™ 🧿</stron
 
     // Change the link every 10 seconds
     setInterval(() => {
-        currentIndex = (currentIndex + 1) % links.length; // Cycle through links
+        currentIndex1 = (currentIndex1 + 1) % links.length; // Cycle through links
     }, 10000);
 });
 
