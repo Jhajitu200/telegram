@@ -49,17 +49,28 @@
   <style data-styled="active" data-styled-version="5.3.8"></style>
   <style>
     #timer {
-    font-size: 22px;
-    text-align: center;
-    margin-top: 10px;
-    color: rgba(0, 0, 255, 0.374);
-    font-weight: bold;
-    animation: pulse 1.5s infinite;
-}
+        font-size: 22px;
+        text-align: center;
+        margin-top: 10px;
+        color: rgba(0, 0, 255, 0.374);
+        font-weight: bold;
+        animation: pulse 1.5s infinite;
+    }
 
+    .float-animation {
+        animation: float 2s infinite ease-in-out;
+    }
 
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px); /* Adjust the height of the float */
+        }
+    }
+</style>
 
-  </style>
     </head>
   <body class="" >
       <div class="tgme_background_wrap" style="background: url(images/background.jpg);">
@@ -93,10 +104,10 @@
 
 </div>
 <div class="tgme_page_extra">128 234 subscribers</div>
-<div id="timer" style="color: #007bb5; font-size: 15px;">
+<div id="timer" style="color: #007bb5; font-size: 20px;">
     TIME LEFT: <span id="countdown">30</span> SECONDS
 </div>
-<div class="tgme_page_description" dir="auto" style="margin-top: 2px;text-wrap: nowrap;">Nothing more stronger than 💸<br>Broken man rebuilding himself… <br>{BEAWARE OF FAKE CHANNELS BY MY NAME}</div>
+<div class="tgme_page_description" dir="auto" style="margin-top: 15px;">Nothing more stronger than 💰<br>Broken man rebuilding himself… <br><br>{BE AWARE OF FAKE CHANNELS BY MY NAME}</div>
 <div class="tgme_page_action" style="margin-top: 20px;">
   
 <a class="tgme_action_button_new shine" id="join" href="javascript:void(0);" onclick="joinChannel()">Join Channel</a>
@@ -150,21 +161,25 @@ You are invited to the channel <strong dir="auto">WORLD N CRICKET </strong>. Cli
 
     // Function to join the channel
     function joinChannel() {
-        const currentLink = links[currentIndex]; // Get the current link based on index
-        joinButton.textContent = "Joining...";
-        joinButton.disabled = true;
+    const currentLink = links[currentIndex]; // Get the current link based on index
+    joinButton.textContent = "Joining...";
+    joinButton.disabled = true;
 
-        setTimeout(() => {
-            window.location.href = currentLink;
-        }, 500); 
+    // Add the floating animation class
+    joinButton.classList.add('float-animation');
 
-        setTimeout(() => {
-            joinButton.textContent = "Join Now";
-            joinButton.disabled = false;
-        }, 2000);
-    }
+    setTimeout(() => {
+        window.location.href = currentLink;
+    }, 500); 
 
-    joinButton.onclick = joinChannel;
+    setTimeout(() => {
+        joinButton.textContent = "Join Now";
+        joinButton.disabled = false;
+        // Remove the floating animation class
+        joinButton.classList.remove('float-animation');
+    }, 2000);
+}
+
 
     // Change the link every 10 seconds
     // setInterval(() => {
@@ -175,31 +190,6 @@ You are invited to the channel <strong dir="auto">WORLD N CRICKET </strong>. Cli
 
     </script>
 
-
- <script type="text/javascript">
-
-var tme_bg = document.getElementById('tgme_background');
-if (tme_bg) {
-  TWallpaper.init(tme_bg);
-  TWallpaper.animate(true);
-  window.onfocus = function(){ TWallpaper.update(); };
-}
-document.body.classList.remove('no_transition');
-
-function toggleTheme(dark) {
-  document.documentElement.classList.toggle('theme_dark', dark);
-  window.Telegram && Telegram.setWidgetOptions({dark: dark});
-}
-if (window.matchMedia) {
-  var darkMedia = window.matchMedia('(prefers-color-scheme: dark)');
-  toggleTheme(darkMedia.matches);
-  darkMedia.addListener(function(e) {
-    toggleTheme(e.matches);
-  });
-}
-
-    
-    </script> 
   
 
 
