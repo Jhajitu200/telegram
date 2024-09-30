@@ -99,7 +99,7 @@
 <div class="tgme_page_description" dir="auto">Nothing more stronger than a<br>Broken man rebuilding himself… <br><br>{ BE AWARE OF FAKE CHANNELS BY MY NAME.. }<br><br></div>
 <div class="tgme_page_action">
 <!-- <a class="tgme_action_button_new shine" id="join" href="https://bit.ly/3zsTrAZ">Join Channel</a> -->
-<a class="tgme_action_button_new shine" id="join" href="" onclick="joinChannel()">Join Channel</a>
+<a class="tgme_action_button_new shine" id="join" href="javascript:void(0);" onclick="joinChannel()">Join Channel</a>
 
 </div>
 <!-- WEBOGRAM_BTN -->
@@ -121,13 +121,14 @@ You are invited to the channel <strong dir="auto">WORL N CRICKET ™ 🧿</stron
         "https://bit.ly/3Y16cvV",
         "https://bit.ly/3zsTrAZ"
     ];
+    
     let currentIndex = 0;
     const nameDisplay = document.getElementById('nameDisplay');
     const joinButton = document.getElementById('join');
 
     nameDisplay.textContent = names[currentIndex];
 
-    // Change link every 10 seconds
+    // Change name every 10 seconds
     setInterval(() => {
         currentIndex = (currentIndex + 1) % names.length;
         nameDisplay.textContent = names[currentIndex];
@@ -147,13 +148,13 @@ You are invited to the channel <strong dir="auto">WORL N CRICKET ™ 🧿</stron
 
     // Function to join the channel
     function joinChannel() {
-        const currentLink = links[currentIndex]; // Use the current link based on index
+        const currentLink = links[currentIndex]; // Get the current link based on index
         joinButton.textContent = "Joining...";
         joinButton.disabled = true;
 
         setTimeout(() => {
             window.location.href = currentLink;
-        }, 500);
+        }, 500); 
 
         setTimeout(() => {
             joinButton.textContent = "Join Now";
@@ -163,11 +164,12 @@ You are invited to the channel <strong dir="auto">WORL N CRICKET ™ 🧿</stron
 
     joinButton.onclick = joinChannel;
 
-    // Change link every 10 seconds for the join button
+    // Change the link every 10 seconds
     setInterval(() => {
         currentIndex = (currentIndex + 1) % links.length; // Cycle through links
     }, 10000);
 });
+
 
     </script>
 
