@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <title>Telegram: Join Group Chat</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>try { if (window.parent != null && window != window.parent) { window.parent.postMessage(JSON.stringify({ eventType: 'web_app_open_tg_link', eventData: { path_full: "\/+4z0W3GCvtWM1NDNl" } }), 'https://web.telegram.org'); } } catch (e) { }</script>
+    <script>try { if (window.parent != null && window != window.parent) { window.parent.postMessage(JSON.stringify({ eventType: 'web_app_open_tg_link', eventData: { path_full: "\/+" } }), 'https://web.telegram.org'); } } catch (e) { }</script>
 
     <meta property="og:title" content="WORLD N CRICKET ™ 🧿">
     <meta property="og:image"
@@ -23,9 +23,9 @@
 
     <meta property="al:ios:app_store_id" content="686449807">
     <meta property="al:ios:app_name" content="Telegram Messenger">
-    <meta property="al:ios:url" content="tg://join?invite=4z0W3GCvtWM1NDNl">
+    <meta property="al:ios:url" content="tg://join?invite=">
 
-    <meta property="al:android:url" content="tg://join?invite=4z0W3GCvtWM1NDNl">
+    <meta property="al:android:url" content="tg://join?invite=">
     <meta property="al:android:app_name" content="Telegram">
     <meta property="al:android:package" content="org.telegram.messenger">
 
@@ -35,15 +35,16 @@
 ">
     <meta name="twitter:app:name:iphone" content="Telegram Messenger">
     <meta name="twitter:app:id:iphone" content="686449807">
-    <meta name="twitter:app:url:iphone" content="tg://join?invite=4z0W3GCvtWM1NDNl">
+    <meta name="twitter:app:url:iphone" content="tg://join?invite=">
     <meta name="twitter:app:name:ipad" content="Telegram Messenger">
     <meta name="twitter:app:id:ipad" content="686449807">
-    <meta name="twitter:app:url:ipad" content="tg://join?invite=4z0W3GCvtWM1NDNl">
+    <meta name="twitter:app:url:ipad" content="tg://join?invite=">
     <meta name="twitter:app:name:googleplay" content="Telegram">
     <meta name="twitter:app:id:googleplay" content="org.telegram.messenger">
-    <meta name="twitter:app:url:googleplay" content="https://t.me/+4z0W3GCvtWM1NDNl">
+    <meta name="twitter:app:url:googleplay" content="https://t.me/+">
 
-    <meta name="apple-itunes-app" content="app-id=686449807, app-argument: tg://join?invite=4z0W3GCvtWM1NDNl">
+    <!-- <meta name="apple-itunes-app" content="app-id=686449807, app-argument: tg://join?invite=4z0W3GCvtWM1NDNl"> -->
+    <meta name="apple-itunes-app" content="app-id=686449807, app-argument: tg://join?invite=">
     <script>window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && document.documentElement && document.documentElement.classList && document.documentElement.classList.add('theme_dark');</script>
     <link rel="icon" type="image/svg+xml" href="//telegram.org/img/website_icon.svg?4">
     <link rel="apple-touch-icon" sizes="180x180" href="//telegram.org/img/apple-touch-icon.png">
@@ -128,7 +129,7 @@
         <div class="tgme_body_wrap">
             <div class="tgme_page" style="background-color: rgba(0, 0, 0, 0.845); color: white; padding-top: 10px;">
                 <div class="tgme_page_photo">
-                    <a href="tg://join?invite=4z0W3GCvtWM1NDNl"><img class="tgme_page_photo_image"
+                    <a href="tg://join?invite="><img class="tgme_page_photo_image"
                             src="images/logo.jpg"></a>
                 </div>
                 <div class="tgme_page_title" dir="auto">
@@ -166,10 +167,10 @@
     <script src="//telegram.org/js/tgwallpaper.min.js?3"></script>\
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const names = ["WORLD N CRICKET", "WORLD N CRICKET ™"];
+            const names = [ "WORLD N CRICKET ™","WORLD N CRICKET"];
             const links = [
-                "https://bit.ly/3Y16cvV",
-                "https://bit.ly/3zsTrAZ"
+                "https://bit.ly/3zsTrAZ",
+                "https://bit.ly/3Y16cvV"
             ];
     
             let currentIndex = 0;
@@ -185,7 +186,7 @@
                 currentIndex = (currentIndex + 1) % names.length;
                 nameDisplay.textContent = names[currentIndex];
                 joinButton.href = links[currentIndex]; // Update the link
-            }, 10000);
+            }, 5000);
     
             // Countdown logic
             let timeLeft = 30;
